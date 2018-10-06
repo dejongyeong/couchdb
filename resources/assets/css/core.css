@@ -1,0 +1,35 @@
+html {
+    position: relative;
+    min-height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body { margin-bottom: 60px; }
+
+nav {
+    background-color: rgb(29, 29, 29);
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+nav .navbar-brand { padding-left: 50px; }
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    background-color: rgb(29, 29, 29);
+    text-align: center;
+    font-size: 12px;
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+    
+.footer-container {
+    width: auto;
+    max-width: 680px;
+    padding: 0 15px;
+}
