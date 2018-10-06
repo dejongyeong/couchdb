@@ -1,0 +1,5 @@
+{
+    "require": {
+        "php-on-couch/php-on-couch": "^2.0"
+    }
+}
