@@ -17,7 +17,7 @@ nav {
 
 nav .navbar-brand { padding-left: 50px; }
 
-nav .navbar-nav { margin-left: 30px; }
+nav .nav-item { margin-left: 30px; }
 
 .footer {
     position: absolute;

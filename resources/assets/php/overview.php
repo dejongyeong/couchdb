@@ -59,7 +59,7 @@ foreach ( $all_docs->rows as $row ) {
 }
 
 
-echo "</tr></tbody>";
+echo "</tbody>";
 
 echo "</table>";
 

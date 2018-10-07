@@ -30,9 +30,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="index.php">Home</a>
                 <a class="nav-item nav-link" href="#">Business List</a>
-                <a class="nav-item nav-link" href="business.php">Business Report</a>
+                <a class="nav-item nav-link active" href="business.php">Business Report <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="#">Insert Contact</a>
                 </div>
             </div>
@@ -41,8 +41,8 @@
 
     <!-- Body -->
     <div class="overview">
-        <div class="col-sm-12 table-responsive">
-            <?php include 'resources/assets/php/overview.php' ?>
+        <div class="col-sm-6 table-responsive">
+            <?php include 'resources/assets/php/report.php' ?>
         </div>
     </div>
 
