@@ -8,11 +8,17 @@
     <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
     <!-- Custom Import -->
     <link rel="stylesheet" type="text/css" href="resources/assets/css/core.css">
 
 </head>
 <body>
+
+    <!-- Check Database Exist -->
+    <?php include 'resources/assets/php/database.php'; ?>
     
     <!-- Header -->
     <div class="header">
@@ -20,8 +26,11 @@
     </div>
 
     <!-- Body -->
-    
-
+    <div class="overview">
+        <div class="col-sm-12 table-responsive">
+            <?php include 'resources/assets/php/list.php' ?>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
