@@ -30,13 +30,21 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="#">Business List</a>
-                <a class="nav-item nav-link" href="business.php">Business Report</a>
-                <a class="nav-item nav-link" href="#">Insert Contact</a>
+                    <!-- Home : Business List -->
+                    <a class="nav-item nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="business.php">Business Report</a>
                 </div>
             </div>
         </nav>
+    </div>
+
+    <!-- Create Button -->
+    <div class="create">
+        <!-- Button to trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-modal">
+        <i class="fas fa-address-book"></i>&nbsp; Insert Business Contact
+        </button>
+        <?php include 'resources/views/create.php' ?>
     </div>
 
     <!-- Body -->

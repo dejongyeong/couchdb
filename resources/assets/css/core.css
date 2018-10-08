@@ -45,3 +45,8 @@ table {
     font-size: 14px;
     vertical-align: middle;
 }
+
+.create {
+    margin: 2% 2.5% 3% 2%;
+    text-align: right;
+}
