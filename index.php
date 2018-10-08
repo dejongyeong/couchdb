@@ -14,11 +14,11 @@
     <!-- Custom Import -->
     <link rel="stylesheet" type="text/css" href="resources/assets/css/core.css">
 
+    <!-- Check Database Exist -->
+    <?php include_once 'resources/assets/php/database.php'; ?>
+
 </head>
 <body>
-
-    <!-- Check Database Exist -->
-    <?php include 'resources/assets/php/database.php'; ?>
     
     <!-- Header -->
     <div class="header">
@@ -42,13 +42,15 @@
     <!-- Body -->
     <div class="overview">
         <div class="col-sm-12 table-responsive">
-            <?php include 'resources/assets/php/overview.php' ?>
+            <?php 
+                require_once 'resources/assets/php/overview.php';
+            ?>
         </div>
     </div>
 
     <!-- Footer -->
     <footer class="footer">
-        <?php include 'resources/views/footer.html'; ?>
+        <?php include_once 'resources/views/footer.html'; ?>
     </footer> 
 
     <!-- Bootstrap JS -->

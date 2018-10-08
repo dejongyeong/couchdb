@@ -57,16 +57,18 @@ function populateFax($rows) {
 }
 
 // Function to populate actions
-function populateAction() {
+function populateAction($_id, $_rev) {
     echo "<td class='float-right'>
     
     <button type='button' class='btn btn-success btn-sm'>
         <i class='far fa-edit'></i> Edit
     </button>
 
-    <button type='button' class='btn btn-danger btn-sm'>
-		<i class='far fa-trash-alt'></i> Delete
-    </button>
+    <form method='post' action='index.php' style='margin: 0; padding: 0; display: inline-block;'>
+        <button name='remove' id='remove' value='$_id' class='btn btn-danger btn-sm' type='submit' onclick=\"return confirm('Are you sure you want to delete this contact?')\">
+            <i class='far fa-trash-alt'></i> Delete
+        </button>
+    </form>
     
     </td>";
 }
@@ -78,8 +80,7 @@ function createView() {
 
     /* Map Function */
     $map = "function(doc) { 
-        if('name' in doc && 'company' in doc) 
-        { 
+        if('name' in doc && 'company' in doc) { 
             doc.company.forEach(function(com) { 
                 if(com.address) { 
                     com.address.forEach(function(add) { 
@@ -105,5 +106,28 @@ function populateBusinessReport($row) {
     echo "<td>".$row->key."</td>";
     echo "<td>".$row->value."</td>";
 }
+
+// Delete Document with $_id
+function delete($_id) {
+
+    require 'connector.php';
+
+    // Get Document
+    try {
+        $doc = $client->getDoc($_id);
+    } catch (Exception $e) {
+        echo "<p class='text-danger'>ERROR: Failed to retrieve document!!";
+    }
+
+    // Remove Document
+    try {
+        if($client->deleteDoc($doc)) {
+            return true;
+        }
+    } catch (Exception $e) {
+        echo "<p class='text-danger'>ERROR: Failed to delete document!!";
+    }
+}
+
 
 ?>

@@ -1,13 +1,23 @@
 <?php
 
 require 'connector.php';
-require 'utilities.php';
+include 'utilities.php';
 
 // Query View to display all business details order by surname
 $all_docs = $client->getView('all', 'by_surname');
 
 if($all_docs->total_rows == 0) {
     require 'resources/views/error.html';
+}
+
+if(isset($_POST['remove'])) {
+    $result = false;
+    $result = delete($_POST['remove']);
+    if($result) {
+        include 'resources/views/notify.html';
+        echo '<!-- Reference to refresh content: https://stackoverflow.com/questions/10643626/refresh-page-after-form-submitting -->';
+        echo "<meta http-equiv='refresh' content='0'>";
+    }
 }
 
 echo "<table class='table table-hover table-advance table-striped'>";
@@ -53,7 +63,7 @@ foreach ( $all_docs->rows as $row ) {
     echo "</td>";
 
     // Action
-    populateAction();
+    populateAction($row->value->_id, $row->value->_rev);
 
     echo "</tr>";
 }
