@@ -22,24 +22,15 @@
                         <div class="form-row">
                             <div class="col-md-4 mb-3">
                                 <label for="surname">Surname:</label>
-                                <input type="text" class="form-control" id="surname" placeholder="Surname" required >
-                                <div class="invalid-feedback">
-                                    Please provide a valid surname!
-                                </div>
+                                <input type="text" class="form-control" id="surname" name='surname' placeholder="Surname" required>
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="forename">Forename:</label>
-                                <input type="text" class="form-control" id="forename" placeholder="Forename" required >
-                                <div class="invalid-feedback">
-                                    Please provide a valid forename!
-                                </div>
+                                <input type="text" class="form-control" id="forename" name='forename' placeholder="Forename" required>
                             </div>
                             <div class="col-md-4 mb-2">
                                 <label for="title">Job Title:</label>
-                                <input type="text" class="form-control" id="title" placeholder="title" required >
-                                <div class="invalid-feedback">
-                                    Please provide a valid job title!
-                                </div>
+                                <input type="text" class="form-control" id="title" name='title' placeholder="Job Title" required>
                             </div>
                         </div>
                     </div>
@@ -48,38 +39,35 @@
                     <div class='form-group' style='border-bottom: 1px solid #dcdcdc'>
                         <div class='col-md-12 mb-3' style='padding:0;'>
                             <label for="email">Email:</label>
-                            <input type="text" class="form-control" id="email" placeholder="Email Address" required >
-                            <div class="invalid-feedback">
-                                Please provide a valid email!
-                            </div>
+                            <input type="email" class="form-control" id="email" name='email' placeholder="Email Address" required>
                         </div>
                     </div>
 
                     <!-- Contact -->
-                    <div class='form-group' style='border-bottom: 1px solid #dcdcdc'>
+                    <fieldset class='form-group' style='border-bottom: 1px solid #dcdcdc'>
                         <div class='col-md-12 mb-3' style='padding:0;'>
-                            <label for="contact">Contact:</label>
+                            <legend class='col-form-legend' style='font-size:inherit;'>Contact</legend>
                             <div class='form-row'>
-                                <div class='col-md-10'>
-                                    <input type='text' name='mobile' class='form-control' placeholder='Mobile'>
-                                    <div class="invalid-feedback">
-                                        Please provide a valid mobile contact!
-                                    </div>
+                                <div class='col-md-10 input-group'>
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="mobile"><i class='fa fa-mobile'></i>&emsp;Mobile</span>
+                                </div>
+                                    <input type='text' name='mobile' class='form-control' placeholder='123 4567890' required pattern='\d{3}\s\d{7}' aria-describedby="mobile">
                                 </div>
                                 <div class='col-md-2'>
                                     <span class='switch'>
-                                        <input type='checkbox' id='fax-switch' data-toggle='toggle' data-offstyle='success' data-onstyle='danger' data-on='Remove Fax' data-off='Add Fax' data-width='100%'>
+                                        <input type='checkbox' id='fax-switch' data-toggle='toggle' data-offstyle='success' data-onstyle='danger' data-on='Remove Fax' data-off='Add Fax' data-width='100%' name='fax-switch'>
                                     </span>
                                 </div>
                             </div>
-                            <div class='mt-3 col-md-10' id='fax-contact' style='padding:0;'>
-                                <input type='text' name='fax' class='form-control' placeholder='Fax'>
-                                <div class="invalid-feedback">
-                                    Please provide a valid fax contact!
+                            <div class='mt-3 col-md-10 input-group' id='fax-contact' style='padding:0;'>
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="fax"  style='width: 95px;'><i class='fas fa-fax'></i>&emsp;Fax</span>
                                 </div>
+                                <input type='text' name='fax' class='form-control' placeholder='123 4567890' id='fax' pattern='\d{3}\s\d{7}' aria-describedby="fax">
                             </div>
                         </div>
-                    </div>
+                    </fieldset>
 
                     <!-- Company Profile -->
                     <fieldset class='form-group'>
@@ -88,10 +76,7 @@
                         <div class='form-group' style='border-bottom: 1px solid #dcdcdc'>
                             <div class='col-md-12 mb-3' style='padding:0;'>
                                 <label for="name">Name:</label>
-                                <input type="text" class="form-control" id="name" placeholder="Company Name" required >
-                                <div class="invalid-feedback">
-                                    Please provide a valid company name!
-                                </div>
+                                <input type="text" class="form-control" id="name" name='name' placeholder="Company Name" required>
                             </div>
                         </div>
                         <!-- Address -->
@@ -99,24 +84,15 @@
                             <div class="form-row">
                                 <div class="col-md-4 mb-3">
                                     <label for="street">Street:</label>
-                                    <input type="text" class="form-control" id="street" placeholder="Street" required >
-                                    <div class="invalid-feedback">
-                                        Please provide a valid street name!
-                                    </div>
+                                    <input type="text" class="form-control" id="street" name='street' placeholder="Street" required>
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label for="town">Town:</label>
-                                    <input type="text" class="form-control" id="town" placeholder="Town" required >
-                                    <div class="invalid-feedback">
-                                        Please provide a valid town name!
-                                    </div>
+                                    <input type="text" class="form-control" id="town" name='town' placeholder="Town" required>
                                 </div>
                                 <div class="col-md-4 mb-2">
                                     <label for="county">County:</label>
-                                    <input type="text" class="form-control" id="county" placeholder="County" required >
-                                    <div class="invalid-feedback">
-                                        Please provide a valid county name!
-                                    </div>
+                                    <input type="text" class="form-control" id="county" name='county' placeholder="County" required>
                                 </div>
                             </div>
                         </div>
@@ -124,7 +100,7 @@
                         <div class='form-group'>
                             <div class='col-md-12 mb-3' style='padding:0;'>
                                 <label for="website">Website:</label>
-                                <input type="url" class="form-control" id="website" placeholder="Website" required >
+                                <input type="url" class="form-control" id="website" name='website' placeholder="http://www.example.com" required>
                                 <div class="invalid-feedback">
                                     Please provide a valid company web url!
                                 </div>
@@ -137,7 +113,7 @@
                 <!-- Modal Footer -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary">Create</button>
+                    <button type="submit" class="btn btn-primary" name='create' value='Create'>Create</button>
                 </div>
             
             </form>

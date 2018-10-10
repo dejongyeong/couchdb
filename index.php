@@ -74,17 +74,19 @@
     <!-- Show or Hide Fax Input -->
     <script type='text/javascript'>
        $(document).ready(function() {
-            var fax=$('#fax-contact')
+            var contact=$('#fax-contact')
 
-            fax.hide();
+            contact.hide();
 
             $('#fax-switch').change(function() {
                 if($(this).prop('checked')) {
-                    fax.show();
+                    contact.show();
+                    $('#fax').attr('required', true);
                 } else {
-                    fax.hide();
+                    contact.hide();
                 }
             });
+
        });
     </script>
 

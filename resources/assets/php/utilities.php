@@ -129,5 +129,43 @@ function delete($_id) {
     }
 }
 
+// Create document
+// References: https://php-on-couch.readthedocs.io/en/latest/api/couchclient/document.html#storedoc
+function insert($surname,$forename,$title,$email,$mobile,$fax,$name,$street,$town,$county,$web) {
+    
+    require 'connector.php';
+
+    if(isset($_POST['create'])) {
+        $doc = new stdClass();
+        $doc->name = array(array('surname' => $surname), array('forename' => $forename));
+        $doc->email = $email;
+        $doc->title = $title;
+        $doc->company = array(array(
+            'name' => $name,
+            'address' => array(
+                array('street' => $street),
+                array('town' => $town),
+                array('county' => $county)
+            ),
+            'website' => $web
+        ));
+        if(empty(trim($fax))) {
+            $doc->contact = array(array('m' => $mobile));
+        } else {
+            $doc->contact = array(array('m' => $mobile), array('f' => $fax));
+        }
+
+        // Store Document
+        try {
+            if($client->storeDoc($doc)) {
+                return true;
+            }
+        } catch(Exception $e) {
+            echo "<p class='text-danger'>ERROR: Failed to create document!!";
+            exit(1);
+        }
+    }
+}
+
 
 ?>
