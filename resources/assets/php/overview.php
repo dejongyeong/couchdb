@@ -51,6 +51,35 @@ if(isset($_POST['create'])) {
     }
 }
 
+// Update Document
+if(isset($_POST['update'])) {
+    // Variables
+    $_id=trim($_POST['id']);
+    $surname=trim($_POST['surname']);
+    $forename=trim($_POST['forename']);
+    $title=trim($_POST['title']);
+    $email=trim($_POST['email']);
+    $mobile=trim($_POST['mobile']);
+    $fax='';
+    if(isset($_POST['fax-switch'])) {
+        $fax=trim($_POST['fax']);
+    }
+    $name=trim($_POST['name']);
+    $street=trim($_POST['street']);
+    $town=trim($_POST['town']);
+    $county=trim($_POST['county']);
+    $web=trim($_POST['website']);
+
+    $result = false;  
+    $result = update($_id,$surname,$forename,$title,$email,$mobile,$fax,$name,$street,$town,$county,$web);
+    if($result) {
+        include 'resources/views/notify.html';
+        unset($_POST);
+        echo '<!-- Reference to refresh content: https://stackoverflow.com/questions/10643626/refresh-page-after-form-submitting -->';
+        echo "<meta http-equiv='refresh' content='0'>";
+    }        
+}
+
 
 
 echo "<table class='table table-hover table-advance table-striped'>";

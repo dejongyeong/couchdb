@@ -85,19 +85,6 @@
                             contact.hide();
                         }
                     });
-
-                    var update=$('#fax-update-contact');
-
-                    update.hide();
-
-                    $('#fax-update-switch').change(function() {
-                        if($(this).prop('checked')) {
-                            update.show();
-                            $('#fax-update').attr('required', true);
-                        } else {
-                            update.hide();
-                        }
-                    });
             });
             </script>
         ";

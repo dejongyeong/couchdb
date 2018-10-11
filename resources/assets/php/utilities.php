@@ -177,8 +177,48 @@ function get($_id) {
     try {
         return $client->getDoc($_id);
     } catch (Exception $e) {
-        echo "<p class='text-danger'>ERROR: Failed to retrieve document!!";
+        echo "<p class='text-danger'>ERROR: Document not found!!";
         exit(1);
+    }
+}
+
+// Update Function
+// References: https://github.com/dready92/PHP-on-Couch/blob/master/doc/couch_client-document.md
+function update($_id,$surname,$forename,$title,$email,$mobile,$fax,$name,$street,$town,$county,$web) {
+
+    require 'connector.php';
+
+    if($_POST['update']) {
+        $doc = get($_id);
+
+        // Make Changes
+        $doc->name = array(array('surname' => $surname), array('forename' => $forename));
+        $doc->email = $email;
+        $doc->title = $title;
+        $doc->company = array(array(
+            'name' => $name,
+            'address' => array(
+                array('street' => $street),
+                array('town' => $town),
+                array('county' => $county)
+            ),
+            'website' => $web
+        ));
+        if(empty(trim($fax))) {
+            $doc->contact = array(array('m' => $mobile));
+        } else {
+            $doc->contact = array(array('m' => $mobile), array('f' => $fax));
+        }
+
+        // Update Document
+        try {
+            if($client->storeDoc($doc)) {
+                return true;
+            }
+        } catch(Exception $e) {
+            echo "<p class='text-danger'>ERROR: Failed to update document!!";
+            exit(1);
+        }
     }
 }
 
