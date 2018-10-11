@@ -101,9 +101,6 @@
                             <div class='col-md-12 mb-3' style='padding:0;'>
                                 <label for="website">Website:</label>
                                 <input type="url" class="form-control" id="website" name='website' placeholder="http://www.example.com" required>
-                                <div class="invalid-feedback">
-                                    Please provide a valid company web url!
-                                </div>
                             </div>
                         </div>
                     </fieldset>

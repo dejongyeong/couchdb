@@ -60,9 +60,11 @@ function populateFax($rows) {
 function populateAction($_id, $_rev) {
     echo "<td class='float-right'>
     
-    <button type='button' class='btn btn-success btn-sm'>
-        <i class='far fa-edit'></i> Edit
-    </button>
+    <form method='post' action=update.php style='margin: 0; padding:0; display: inline-block;'>
+        <button type='submit' name='upd' id='upd' value='$_id' class='btn btn-success btn-sm'>
+            <i class='far fa-edit'></i> Edit
+        </button>
+    </form>
 
     <form method='post' action='index.php' style='margin: 0; padding: 0; display: inline-block;'>
         <button name='remove' id='remove' value='$_id' class='btn btn-danger btn-sm' type='submit' onclick=\"return confirm('Are you sure you want to delete this contact?')\">
@@ -164,6 +166,19 @@ function insert($surname,$forename,$title,$email,$mobile,$fax,$name,$street,$tow
             echo "<p class='text-danger'>ERROR: Failed to create document!!";
             exit(1);
         }
+    }
+}
+
+// Get Document
+// References: https://php-on-couch.readthedocs.io/en/latest/api/couchclient/document.html#getdoc
+function get($_id) {
+    require 'connector.php';
+    
+    try {
+        return $client->getDoc($_id);
+    } catch (Exception $e) {
+        echo "<p class='text-danger'>ERROR: Failed to retrieve document!!";
+        exit(1);
     }
 }
 

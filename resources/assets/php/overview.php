@@ -16,6 +16,7 @@ if(isset($_POST['remove'])) {
     $result = delete($_POST['remove']);
     if($result) {
         include 'resources/views/notify.html';
+        unset($_POST);
         echo '<!-- Reference to refresh content: https://stackoverflow.com/questions/10643626/refresh-page-after-form-submitting -->';
         echo "<meta http-equiv='refresh' content='0'>";
     }

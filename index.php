@@ -51,9 +51,7 @@
     <!-- Body -->
     <div class="overview">
         <div class="col-sm-12 table-responsive">
-            <?php 
-                require_once 'resources/assets/php/overview.php';
-            ?>
+            <?php require_once 'resources/assets/php/overview.php'; ?>
         </div>
     </div>
 
@@ -72,23 +70,38 @@
     <!-- References: https://jsfiddle.net/jdme/3amv9y7y/13/ -->
     <!-- References: http://www.bootstraptoggle.com/ -->
     <!-- Show or Hide Fax Input -->
-    <script type='text/javascript'>
-       $(document).ready(function() {
-            var contact=$('#fax-contact')
+    <?php
+        echo "<script type='text/javascript'>
+            $(document).ready(function() {
+                    var contact=$('#fax-contact');
 
-            contact.hide();
-
-            $('#fax-switch').change(function() {
-                if($(this).prop('checked')) {
-                    contact.show();
-                    $('#fax').attr('required', true);
-                } else {
                     contact.hide();
-                }
-            });
 
-       });
-    </script>
+                    $('#fax-switch').change(function() {
+                        if($(this).prop('checked')) {
+                            contact.show();
+                            $('#fax').attr('required', true);
+                        } else {
+                            contact.hide();
+                        }
+                    });
+
+                    var update=$('#fax-update-contact');
+
+                    update.hide();
+
+                    $('#fax-update-switch').change(function() {
+                        if($(this).prop('checked')) {
+                            update.show();
+                            $('#fax-update').attr('required', true);
+                        } else {
+                            update.hide();
+                        }
+                    });
+            });
+            </script>
+        ";
+    ?>
 
 </body>
 </html>
