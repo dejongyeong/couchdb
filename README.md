@@ -1,8 +1,8 @@
 # Couchdb
-CouchDB Portfolio for Advanced Database Programming in IT Tralee.<br>
-<i>
-    Aim of this project is to learn CouchDB CRUD operation with the use of selected APIs from UI.
-</i>
+
+<b>IT Tralee Year 4 Semester 1</b>
+
+CouchDB Portfolio for Advanced Database Programming in IT Tralee. Aim of this project is to learn CouchDB CRUD operation with the use of selected APIs from UI.
 
 <p>Implementation is about storing business card details into CouchDB</p>
 
